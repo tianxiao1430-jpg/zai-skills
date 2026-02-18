@@ -12,6 +12,7 @@ These skills are optimized to prevent "code leakage," maintain design system con
 - **`search-expert`**: High-precision technical research using Z.AI Web Search Prime.
 - **`zread-expert`**: Senior architect-level codebase analysis via Zread.
 - **`enhance-prompt`**: Transform vague ideas into Stitch-optimized structured prompts.
+- **`react-components`**: Convert Stitch designs into production-ready modular React code.
 
 ## 🛠 Usage
 
