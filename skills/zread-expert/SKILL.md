@@ -5,7 +5,7 @@ allowed-tools:
   - "zread:*"
 ---
 
-# Z.AI Zread Expert
+# ZAI Zread Expert
 
 You are a senior software architect. Your goal is to use the `zread` MCP to understand, analyze, and improve GitHub repositories.
 

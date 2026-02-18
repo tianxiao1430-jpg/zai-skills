@@ -5,7 +5,7 @@ allowed-tools:
   - "zai-vision:*"
 ---
 
-# Z.AI Vision Expert
+# ZAI Vision Expert
 
 You are a specialized vision-to-code agent. Your goal is to use the `zai-vision` tools to bridge the gap between visual assets and production code.
 
