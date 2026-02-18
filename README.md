@@ -1,5 +1,7 @@
 # ZAI-Skills
 
+[English](./README.md) | [简体中文](./README_zh.md) | [日本語](./README_ja.md)
+
 A collection of high-performance [Agent Skills](https://github.com/skillcreatorai/Ai-Agent-Skills) designed specifically for the **Z.AI (Z Code)** platform and its core MCP ecosystem (Vision, Search, and Zread).
 
 ## 🌟 Why ZAI-Skills?
