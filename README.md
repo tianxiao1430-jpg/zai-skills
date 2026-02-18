@@ -2,12 +2,13 @@
 
 A collection of high-performance [Agent Skills](https://github.com/skillcreatorai/Ai-Agent-Skills) designed specifically for the **Z.AI (Z Code)** platform and its core MCP ecosystem (Vision, Search, and Zread).
 
-## Why ZAI-Skills?
+## 🌟 Why ZAI-Skills?
 
 These skills are optimized to enhance the three fundamental pillars of the Z.AI intelligence suite, providing advanced instructions for high-fidelity technical output.
 
 ## 🚀 Available Skills
 
+- **`zai-orchestrator` (New!)**: The "Brain" skill. Coordinates Vision, Search, and Zread to solve complex, multi-step engineering tasks.
 - **`vision-expert`**: Advanced UI-to-Code, technical diagram analysis, and visual error diagnosis for Z.AI Vision.
 - **`search-expert`**: High-precision technical research and structured information synthesis using Z.AI Web Search Prime.
 - **`zread-expert`**: Senior architect-level codebase analysis, structural audits, and semantic search via Zread.
@@ -17,13 +18,17 @@ These skills are optimized to enhance the three fundamental pillars of the Z.AI 
 Install skills directly into your Z Code, Claude Code, or Cursor environment:
 
 ```bash
-npx skills add https://github.com/tianxiao1430-jpg/zai-skills --skill vision-expert
+npx skills add https://github.com/tianxiao1430-jpg/zai-skills --skill zai-orchestrator
 ```
 
-## 🔗 Related Resources
+## 🤝 Contributing
 
-- [Z.AI Official](https://z.ai/)
-- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+This is a community-driven project! We welcome everyone to:
+1. **Submit new skills** for Z.AI tools.
+2. **Refine existing instructions** to improve AI reliability.
+3. **Share edge cases** where these skills saved your day.
+
+Feel free to open a PR or Issue. Let's build the best Z.AI toolbox together!
 
 ## 📄 License
 
