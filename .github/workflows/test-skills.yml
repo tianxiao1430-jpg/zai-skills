@@ -1,0 +1,44 @@
+name: Test Skills
+
+on:
+  push:
+    paths:
+      - 'skills/**/*.md'
+      - 'tests/**/*'
+  pull_request:
+    paths:
+      - 'skills/**/*.md'
+      - 'tests/**/*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+      
+      - name: Run skill tests
+        run: |
+          python tests/run_tests.py
+      
+      - name: Generate test report
+        if: always()
+        run: |
+          python tests/run_tests.py --report
+      
+      - name: Upload test report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-report
+          path: tests/TEST_REPORT.md
+          retention-days: 30
