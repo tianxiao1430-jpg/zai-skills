@@ -1,0 +1,213 @@
+{
+  "vision-expert": [
+    {
+      "id": "vision-001",
+      "name": "UI 转代码 - 登录页面",
+      "input": {
+        "type": "image",
+        "description": "登录页面截图",
+        "prompt": "帮我把这个 UI 转成 React 代码"
+      },
+      "expected": {
+        "tool_called": "ui_to_artifact",
+        "output_contains": ["React", "Tailwind", "组件", "输入框", "按钮"],
+        "code_quality": {
+          "has_comments": true,
+          "is_modular": true,
+          "has_responsive": true
+        }
+      }
+    },
+    {
+      "id": "vision-002",
+      "name": "错误诊断 - TypeError",
+      "input": {
+        "type": "image",
+        "description": "终端 TypeError 错误截图",
+        "prompt": "这个报错怎么修？"
+      },
+      "expected": {
+        "tool_called": "diagnose_error_screenshot",
+        "output_contains": ["错误原因", "修复方案", "代码示例"],
+        "accuracy": {
+          "correct_error_type": true,
+          "actionable_fix": true
+        }
+      }
+    },
+    {
+      "id": "vision-003",
+      "name": "架构图分析",
+      "input": {
+        "type": "image",
+        "description": "系统架构图",
+        "prompt": "帮我分析这个系统架构"
+      },
+      "expected": {
+        "tool_called": "understand_technical_diagram",
+        "output_contains": ["组件", "数据流", "架构"],
+        "structure": {
+          "identifies_components": true,
+          "describes_relationships": true
+        }
+      }
+    }
+  ],
+  "search-expert": [
+    {
+      "id": "search-001",
+      "name": "技术对比调研",
+      "input": {
+        "type": "text",
+        "prompt": "对比 Next.js 和 Remix 的优缺点"
+      },
+      "expected": {
+        "tool_called": "zai_web_search",
+        "output_contains": ["对比", "优点", "缺点", "建议"],
+        "quality": {
+          "structured_comparison": true,
+          "multiple_sources": true,
+          "actionable_recommendation": true
+        }
+      }
+    },
+    {
+      "id": "search-002",
+      "name": "最佳实践调研",
+      "input": {
+        "type": "text",
+        "prompt": "React 性能优化的最佳实践"
+      },
+      "expected": {
+        "tool_called": "zai_web_search",
+        "output_contains": ["最佳实践", "优化", "性能"],
+        "quality": {
+          "categorized": true,
+          "with_examples": true
+        }
+      }
+    },
+    {
+      "id": "search-003",
+      "name": "错误解决方案调研",
+      "input": {
+        "type": "text",
+        "prompt": "TypeError: Cannot read property of undefined 常见原因"
+      },
+      "expected": {
+        "tool_called": "zai_web_search",
+        "output_contains": ["原因", "解决方案", "代码示例"],
+        "quality": {
+          "multiple_causes": true,
+          "with_code_fixes": true
+        }
+      }
+    }
+  ],
+  "zread-expert": [
+    {
+      "id": "zread-001",
+      "name": "项目结构分析",
+      "input": {
+        "type": "text",
+        "prompt": "帮我分析 facebook/react 的目录结构"
+      },
+      "expected": {
+        "tool_called": "zread.structure",
+        "output_contains": ["结构", "目录", "模块"],
+        "quality": {
+          "clear_structure": true,
+          "core_modules_identified": true
+        }
+      }
+    },
+    {
+      "id": "zread-002",
+      "name": "源码实现分析",
+      "input": {
+        "type": "text",
+        "prompt": "React 的 useEffect 是怎么实现的"
+      },
+      "expected": {
+        "tools_called": ["zread.search", "zread.read"],
+        "output_contains": ["实现", "代码", "原理"],
+        "quality": {
+          "source_path_provided": true,
+          "code_example_included": true
+        }
+      }
+    },
+    {
+      "id": "zread-003",
+      "name": "Issue 调研",
+      "input": {
+        "type": "text",
+        "prompt": "这个库有哪些未解决的严重 Bug"
+      },
+      "expected": {
+        "tool_called": "zread.search",
+        "search_type": "issues",
+        "output_contains": ["Issue", "Bug", "问题"],
+        "quality": {
+          "issue_links_provided": true,
+          "severity_assessed": true
+        }
+      }
+    }
+  ],
+  "zai-orchestrator": [
+    {
+      "id": "orch-001",
+      "name": "全栈功能开发",
+      "input": {
+        "type": "text",
+        "prompt": "帮我实现一个带登录的博客系统"
+      },
+      "expected": {
+        "workflow": ["Analyze", "Augment", "Act"],
+        "skills_used": ["zread", "search", "vision"],
+        "output_contains": ["架构", "技术栈", "实现方案"],
+        "quality": {
+          "comprehensive_plan": true,
+          "tech_stack_justified": true,
+          "code_provided": true
+        }
+      }
+    },
+    {
+      "id": "orch-002",
+      "name": "复杂 Bug 排查",
+      "input": {
+        "type": "text",
+        "prompt": "这个功能本地正常，部署后报错"
+      },
+      "expected": {
+        "workflow": ["Analyze", "Augment", "Act"],
+        "skills_used": ["zread", "search"],
+        "output_contains": ["可能原因", "排查步骤", "修复方案"],
+        "quality": {
+          "multiple_causes_considered": true,
+          "actionable_steps": true
+        }
+      }
+    },
+    {
+      "id": "orch-003",
+      "name": "技术选型",
+      "input": {
+        "type": "text",
+        "prompt": "我要做一个实时协作编辑器，用什么技术栈"
+      },
+      "expected": {
+        "workflow": ["Analyze", "Augment", "Act"],
+        "skills_used": ["search", "zread"],
+        "output_contains": ["技术方案", "对比", "推荐"],
+        "quality": {
+          "multiple_options_compared": true,
+          "clear_recommendation": true,
+          "pros_cons_listed": true
+        }
+      }
+    }
+  ]
+}
